@@ -1,0 +1,7 @@
+{
+  "tool_name": "mcp__unreal-mcp__call_tool",
+  "tool_input_preview": "{\"toolset_name\":\"editor_toolset.toolsets.blueprint.BlueprintTools\",\"tool_name\":\"break_pins\",\"arguments\":{\"output_pin\":{\"direction\":\"EGPD_Output\",\"index_id\":0,\"node\":{\"refPath\":\"/Game/Blueprints/Abilit...",
+  "error": "Pins then and execute are not connected.",
+  "timestamp": "2026-07-23T09:29:18.529Z",
+  "retry_count": 1
+}

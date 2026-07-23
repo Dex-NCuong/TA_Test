@@ -1,0 +1,7 @@
+{
+  "tool_name": "mcp__unreal-mcp__call_tool",
+  "tool_input_preview": "{\"toolset_name\":\"editor_toolset.toolsets.object.ObjectTools\",\"tool_name\":\"get_properties\",\"arguments\":{\"instance\":{\"refPath\":\"/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.Default__BP_ThirdPers...",
+  "error": "Function \"get_properties\", input param \"properties\" is required by the function input schema Json, but is missing from the incoming function input params Json.\nFunction schema Json -\n{\"type\":\"object\",\"properties\":{\"instance\":{\"type\":\"object\",\"title\":\"/Script/CoreUObject.Object\",\"description\":\"Represents a reference to a UObject or UClass.\",\"properties\":{\"refPath\":{\"type\":\"string\",\"description\":\"The reference stored as a soft path string.\"}},\"required\":[\"refPath\"]},\"properties\":{\"type\":\"array\",\"i...",
+  "timestamp": "2026-07-23T09:18:25.754Z",
+  "retry_count": 2
+}

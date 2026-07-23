@@ -1,0 +1,7 @@
+{
+  "tool_name": "mcp__unreal-mcp__call_tool",
+  "tool_input_preview": "{\"toolset_name\":\"editor_toolset.toolsets.blueprint.BlueprintTools\",\"arguments\":{\"pos\":{\"x\":600,\"y\":300},\"reason\":\"Create Less Than node for Mana < ManaCost\",\"type_id\":\"Utilities|Operators|Less\",\"graph...",
+  "error": "The node could not be created / Utilities|Operators|Less does not exist",
+  "timestamp": "2026-07-23T05:12:59.825Z",
+  "retry_count": 1
+}

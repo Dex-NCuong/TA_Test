@@ -1,0 +1,7 @@
+{
+  "tool_name": "mcp__unreal-mcp__call_tool",
+  "tool_input_preview": "{\"toolset_name\":\"editor_toolset.toolsets.blueprint.BlueprintTools\",\"tool_name\":\"get_node_type_pins\",\"arguments\":{\"graph\":{\"refPath\":\"/Game/Blueprints/Ability/BP_Heal.BP_Heal:EventGraph\"},\"type_id\":\"Cl...",
+  "error": "The node could not be created / Class|BPAbilityBase|GetAbilityData does not exist\n'NoneType' object has no attribute 'get_node_title'",
+  "timestamp": "2026-07-23T07:52:15.036Z",
+  "retry_count": 1
+}
