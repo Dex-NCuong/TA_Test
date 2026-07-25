@@ -197,9 +197,21 @@ Remaining sign-off: enable Shader Complexity in the viewport at worst-case weath
 
 ## 🎨 Media Preview
 
-> **Not yet recorded.** There is no `Media/` directory in this repository. The only capture present is `Saved/Demos/_recorder_smoke_test.mp4`, a test of the recording script rather than a demo.
->
-> `Scripts/RecordEnemyWizardDemo.ps1` records a 12-minute Test F walkthrough to `Saved/Demos/EnemyCreationWizard_Demo_12min.mp4`; the shot list is in [EnemyCreationWizardDemo.md](Docs/EnemyCreationWizardDemo.md).
+### Screenshots
+
+![Dynamic weather material preview row in Lvl_ThirdPerson](Media/Screenshots/01_Overview.png)
+
+*Test D — the six surface presets (Wood, Rock, Default, Ice, Fabric, Ground) driven by the shared weather material parameter collection in `Lvl_ThirdPerson`.*
+
+![Enemy Creation Wizard, Step 1 of 5, open in the Widget Designer](Media/Screenshots/02_Overview.png)
+
+*Test F — `EUW_EnemyCreationWizard` in the Designer at Step 1/5 (Identity & Naming), showing the `BP_` name normalization and the optional sub-folder scaffolding.*
+
+### Video Demo
+
+[Video Demo](Media/Videos/Gameplay_Demo.mp4)
+
+A 4:30 walkthrough at 1080p60 covering the Enemy Creation Wizard end to end — the five wizard steps, the native asset pickers, and the generated `BP_DemoGoblin` with its mesh, material slots, gameplay values, and Behavior Tree assigned. The shot list and expected outputs are in [EnemyCreationWizardDemo.md](Docs/EnemyCreationWizardDemo.md).
 
 ---
 
@@ -225,8 +237,9 @@ TA_Test/
 │   ├── DynamicWeatherMaterialSystem.md          # Test D: material system notes
 │   ├── DynamicWeatherOptimizationReport.md      # Test D: optimization decisions
 │   └── EnemyCreationWizardDemo.md               # Test F: demo script
-├── Scripts/
-│   └── RecordEnemyWizardDemo.ps1                # Test F: screen-recording helper
+├── Media/
+│   ├── Screenshots/                             # Still captures referenced by the README
+│   └── Videos/                                  # Demo recordings
 ├── Plugins/
 │   └── EnemyCreationWizardEditor/               # Test F: C++ plugin (2 modules)
 │       └── Source/
