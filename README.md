@@ -117,7 +117,7 @@ Only three functions are exposed to Blueprint — `CreateEnemyFromWizard`, `Open
 
 1. Open UE 5.8 Editor with the project loaded
 2. In Content Browser, browse to `Content/GeneratedEnemiesDemo/Tools/EUW_EnemyCreationWizard`
-3. Right-click → **Run Editor Utility Widget**
+3. double-click → **EUW_EnemyCreationWizard**
 4. Follow the 5-step workflow:
    - **Step 1:** Enter enemy name (automatically prefixed with `BP_`), choose output directory, optionally enable sub-folder creation
    - **Step 2:** Select a Skeletal Mesh → fill each material slot that appears
@@ -197,9 +197,9 @@ Remaining sign-off: enable Shader Complexity in the viewport at worst-case weath
 
 ## 🎨 Media Preview
 
-> **Not yet recorded.** There is no `Media/` directory in this repository. The only capture present is `Saved/Demos/_recorder_smoke_test.mp4`, a smoke test of the recording setup rather than a demo.
+> **Not yet recorded.** There is no `Media/` directory in this repository. The only capture present is `Saved/Demos/_recorder_smoke_test.mp4`, a test of the recording script rather than a demo.
 >
-> The Test F walkthrough is *planned* — the shot list and step-by-step demo script live in [EnemyCreationWizardDemo.md](Docs/EnemyCreationWizardDemo.md) — but the final video (and the required screenshots) have not been captured yet.
+> `Scripts/RecordEnemyWizardDemo.ps1` records a 12-minute Test F walkthrough to `Saved/Demos/EnemyCreationWizard_Demo_12min.mp4`; the shot list is in [EnemyCreationWizardDemo.md](Docs/EnemyCreationWizardDemo.md).
 
 ---
 
@@ -298,8 +298,8 @@ No `Source/` directory at the project root — all C++ lives in the plugin under
 
 ## 📤 Submission Notes
 
-- **Repository type:** Private GitHub — access granted to designated reviewers
-- **Contact:** daonguyenhoang.dex@gmail.com
+- **Repository type:** Private GitHub — access granted to designated reviewers.
+- **Contact:** daonhatcuong2004@gmail.com  
 - **Email to:** hai.huynh@atherlabs.com
 - **Subject line:** "TA Test Submission — Đào Nhật Cường — Test D-E-F"
 
