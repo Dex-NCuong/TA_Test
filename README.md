@@ -296,13 +296,5 @@ No `Source/` directory at the project root — all C++ lives in the plugin under
 
 ---
 
-## 📤 Submission Notes
-
-- **Repository type:** Private GitHub — access granted to designated reviewers.
-- **Contact:** daonhatcuong2004@gmail.com  
-- **Email to:** hai.huynh@atherlabs.com
-- **Subject line:** "TA Test Submission — Đào Nhật Cường — Test D-E-F"
-
----
 
 *Built with Unreal Engine 5.8 • Technical Artist Candidate — Đào Nhật Cường*
