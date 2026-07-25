@@ -21,20 +21,6 @@
 - Enemy Class: `Grunt`.
 - Behavior Tree: `/Game/Blueprints/Enemies/BT_TestEnemy`.
 
-## Timeline (12:00)
-
-| Time | Action |
-|---|---|
-| 00:00–00:40 | Introduce the tool, identify the canonical Editor Utility Widget, and show the five-step workflow. |
-| 00:40–01:50 | Step 1: enter `DemoGoblin`; show immediate `BP_` normalization. Open the native content-path picker and choose `/Game/GeneratedEnemiesDemo`. |
-| 01:50–04:20 | Step 2: use the filtered native Skeletal Mesh picker. Select Quinn. Show that the material list is generated from the mesh's real slots and that every row is a filtered Material Interface picker. |
-| 04:20–05:30 | Optionally change one material, then restore/confirm the desired materials. Explain support for meshes with more than four slots. |
-| 05:30–06:40 | Step 3: enter Health, Damage, Movement Speed, and Enemy Class. |
-| 06:40–07:50 | Step 4: use the filtered native Behavior Tree picker and select `BT_TestEnemy`. |
-| 07:50–09:20 | Step 5: review every concrete value, resolved output path, and material slot assignment. |
-| 09:20–10:20 | Click **Generate Enemy** and show progress, status, log, and success notification. |
-| 10:20–11:20 | Browse to `/Game/GeneratedEnemiesDemo/Blueprints/BP_DemoGoblin`; open it and inspect defaults/metadata. |
-| 11:20–12:00 | Summarize validation and generated outputs. Mention that PIE must be stopped during asset generation. |
 
 ## Expected output
 
@@ -44,8 +30,4 @@
 
 ## Recording
 
-The demo has not been captured yet. Record the primary monitor while following the steps above and save the result to:
 
-`Saved/Demos/EnemyCreationWizard_Demo_12min.mp4`
-
-(A recording helper script is not committed to the repo — use OBS or any screen recorder of your choice.)
