@@ -1,4 +1,4 @@
-# Enemy Creation Wizard — 12-minute end-to-end demo
+# Enemy Creation Wizard 
 
 ## Preconditions
 
