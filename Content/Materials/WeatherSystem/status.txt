@@ -1,0 +1,29 @@
+Weather system base structure created.
+MF_WetnessSurface built with base color tint, roughness lerp to 0, and normal lerp to flat.
+MF_SnowAccumulation built with up-vector masking for color and normal.
+MF_TemperatureEffects built with If node for temp < 0.
+
+--- UPDATE: July 2026 ---
+
+TASK 1 - Time-of-Day Color Temperature Shifts: COMPLETED
+- 4-keyframe SunColor cycle: Night(0.05,0.07,0.15) -> Dawn(1.0,0.5,0.2) -> Noon(1.0,0.95,0.85) -> Dusk(1.0,0.4,0.15)
+- 4-keyframe SkyTint cycle with complementary colors
+- DirectionalLight temperature control (optional, assign a LightComponent ref)
+- Day/night light intensity modulation via sin-based curve
+- Custom preview events: PreviewDawn/Noon/Dusk/Night
+- MPC_GlobalWeather now has SunColor and SkyTint vector parameters
+- PreviewTimeOfDay(Hour) custom event for runtime time setting
+
+TASK 2 - Weather Transition Animations: COMPLETED
+- Replaced FInterpTo (exponential smoothing) with Smoothstep-based Lerp
+  (t * t * (3 - 2 * t) curve easing)
+- Proper transition timeline with progress tracking (0->1 over TransitionDuration)
+- Old values stored at transition start for accurate interpolation
+- Custom events store old values before transitioning:
+  PreviewDry, PreviewRain, PreviewSnow, PreviewFrozen, ApplyWeatherImmediate
+
+TASK 3 - Texture Validation & Mobile Preview: IN PROGRESS
+- Metal uses NormalGL_jpg (equivalent to NormalDX with correct compression)
+- Wood and Ice material instances confirmed with correct textures
+- No AmbientOcclusion parameter exposed in material instances
+- Remaining: Manual Shader Complexity viewport check + Mobile Preview verification

@@ -1,0 +1,10 @@
+(fn ActivateAbilitySlot1 ()
+  (if (Variables|Default|GetAbility1Ready)
+    (Game|SpawnActorfromClass
+      :Class "/Game/Blueprints/Ability/BP_AbilityBase.BP_AbilityBase_C"
+      :SpawnTransform (Math|Transform|MakeTransform (Transformation|GetActorLocation (Components|GetOwner self)))
+      :CollisionHandlingOverride "AlwaysSpawn"
+      :TransformScaleMethod "MultiplyWithRoot"
+      :Owner (Components|GetOwner self)
+      (:then
+        (Development|PrintString "slot1 spawned")))))

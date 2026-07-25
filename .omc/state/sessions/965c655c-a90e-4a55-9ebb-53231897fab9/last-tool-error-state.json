@@ -1,7 +1,0 @@
-{
-  "tool_name": "Agent",
-  "tool_input_preview": "{\"description\":\"Audit Unreal requirements\",\"prompt\":\"Read-only audit of E:\\\\HocUnrealengine\\\\TA_Test against these requirements: GameplayTags.ini tag Ability.Magic.Fire.Fireball, filtering, tag cooldo...",
-  "error": "Cannot create agent worktree: not in a git repository and no WorktreeCreate hooks are configured. Configure WorktreeCreate/WorktreeRemove hooks in settings.json to use worktree isolation with other VCS systems.",
-  "timestamp": "2026-07-23T09:31:52.227Z",
-  "retry_count": 1
-}

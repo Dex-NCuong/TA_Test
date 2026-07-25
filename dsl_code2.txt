@@ -1,0 +1,78 @@
+(fn ActivateAbility (Index)
+  (bind _asbp (Variables|Default|GetAsBPAbilityBase))
+  (bind _asbp1 (Variables|Default|GetAsBPAbilityBase))
+  (if (and (== Index 0) (Variables|Default|GetAbility0Ready))
+    (Game|SpawnActorfromClass
+      :Class "/Game/Blueprints/Ability/BP_AbilityBase.BP_AbilityBase_C"
+      :SpawnTransform (Math|Transform|MakeTransform (Transformation|GetActorLocation (Components|GetOwner self)))
+      :CollisionHandlingOverride "AlwaysSpawn"
+      :TransformScaleMethod "MultiplyWithRoot"
+      :Owner (Components|GetOwner self)
+      (:then
+        (bind _cast (Utilities|Casting|CastToBP_AbilityBase _return_value)
+          (:then
+            (Class|EUWEnemyCreationWizard|SetAbilityData (Utilities|Array|Get(acopy) (Variables|Default|GetAbilityDataList) Index) (Variables|Default|SetAsBPAbilityBase _cast))
+            (bind _oc (Utilities|Casting|CastToBP_ThirdPersonCharacter (Components|GetOwner self))
+              (:then
+                (Class|EUWEnemyCreationWizard|SetOwnerCharacter _oc _cast)
+                (bind _ca (Class|EUWEnemyCreationWizard|CanActivate (Variables|Default|GetAsBPAbilityBase)))
+                (if _ca
+                  (CallFunction|StartCooldown Index)
+                  (Class|BPThirdPersonCharacter|SetStaminaClamped _oc (- (Class|BPThirdPersonCharacter|GetStamina _oc) (Class|DAAbilityData|GetStaminaCost (Utilities|Array|Get(acopy) (Variables|Default|GetAbilityDataList) Index))))
+                  (Components|Activation|Activate _cast)
+                  (else
+                    (Actor|DestroyActor _cast))))
+              (:CastFailed
+                (Actor|DestroyActor _cast))))
+          (:CastFailed
+            (Actor|DestroyActor _return_value))))))
+  (if (and (== Index 1) (Variables|Default|GetAbility1Ready))
+    (Game|SpawnActorfromClass
+      :Class "/Game/Blueprints/Ability/BP_AbilityBase.BP_AbilityBase_C"
+      :SpawnTransform (Math|Transform|MakeTransform (Transformation|GetActorLocation (Components|GetOwner self)))
+      :CollisionHandlingOverride "AlwaysSpawn"
+      :TransformScaleMethod "MultiplyWithRoot"
+      :Owner (Components|GetOwner self)
+      (:then
+        (bind _cast2 (Utilities|Casting|CastToBP_AbilityBase _return_value)
+          (:then
+            (Class|EUWEnemyCreationWizard|SetAbilityData (Utilities|Array|Get(acopy) (Variables|Default|GetAbilityDataList) Index) (Variables|Default|SetAsBPAbilityBase _cast2))
+            (bind _oc2 (Utilities|Casting|CastToBP_ThirdPersonCharacter (Components|GetOwner self))
+              (:then
+                (Class|EUWEnemyCreationWizard|SetOwnerCharacter _oc2 _cast2)
+                (bind _ca2 (Class|EUWEnemyCreationWizard|CanActivate (Variables|Default|GetAsBPAbilityBase)))
+                (if _ca2
+                  (CallFunction|StartCooldown Index)
+                  (Class|BPThirdPersonCharacter|SetStaminaClamped _oc2 (- (Class|BPThirdPersonCharacter|GetStamina _oc2) (Class|DAAbilityData|GetStaminaCost (Utilities|Array|Get(acopy) (Variables|Default|GetAbilityDataList) Index))))
+                  (Components|Activation|Activate _cast2)
+                  (else
+                    (Actor|DestroyActor _cast2))))
+              (:CastFailed
+                (Actor|DestroyActor _cast2))))
+          (:CastFailed
+            (Actor|DestroyActor _return_value))))))
+  (if (and (== Index 2) (Variables|Default|GetAbility2Ready))
+    (Game|SpawnActorfromClass
+      :Class "/Game/Blueprints/Ability/BP_AbilityBase.BP_AbilityBase_C"
+      :SpawnTransform (Math|Transform|MakeTransform (Transformation|GetActorLocation (Components|GetOwner self)))
+      :CollisionHandlingOverride "AlwaysSpawn"
+      :TransformScaleMethod "MultiplyWithRoot"
+      :Owner (Components|GetOwner self)
+      (:then
+        (bind _cast3 (Utilities|Casting|CastToBP_AbilityBase _return_value)
+          (:then
+            (Class|EUWEnemyCreationWizard|SetAbilityData (Utilities|Array|Get(acopy) (Variables|Default|GetAbilityDataList) Index) (Variables|Default|SetAsBPAbilityBase _cast3))
+            (bind _oc3 (Utilities|Casting|CastToBP_ThirdPersonCharacter (Components|GetOwner self))
+              (:then
+                (Class|EUWEnemyCreationWizard|SetOwnerCharacter _oc3 _cast3)
+                (bind _ca3 (Class|EUWEnemyCreationWizard|CanActivate (Variables|Default|GetAsBPAbilityBase)))
+                (if _ca3
+                  (CallFunction|StartCooldown Index)
+                  (Class|BPThirdPersonCharacter|SetStaminaClamped _oc3 (- (Class|BPThirdPersonCharacter|GetStamina _oc3) (Class|DAAbilityData|GetStaminaCost (Utilities|Array|Get(acopy) (Variables|Default|GetAbilityDataList) Index))))
+                  (Components|Activation|Activate _cast3)
+                  (else
+                    (Actor|DestroyActor _cast3))))
+              (:CastFailed
+                (Actor|DestroyActor _cast3))))
+          (:CastFailed
+            (Actor|DestroyActor _return_value)))))))

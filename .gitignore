@@ -72,3 +72,12 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# AI / editor tooling folders
+.claude/
+.codex/
+.cursor/
+.gemini/
+.omc/
+.vscode/
+.mcp.json

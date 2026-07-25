@@ -1,7 +1,0 @@
-{
-  "tool_name": "mcp__unreal-mcp__call_tool",
-  "tool_input_preview": "{\"toolset_name\":\"editor_toolset.toolsets.blueprint.BlueprintTools\",\"tool_name\":\"create_node\",\"arguments\":{\"declaring_class\":{\"refPath\":\"/Game/Blueprints/Abilities/BP_AbilityBase.BP_AbilityBase_C\"},\"gr...",
-  "error": "The node could not be created / CallFunction does not exist",
-  "timestamp": "2026-07-23T05:29:40.555Z",
-  "retry_count": 13
-}

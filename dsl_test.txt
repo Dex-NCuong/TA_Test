@@ -1,0 +1,4 @@
+(fn ActivateAbility (Index)
+  (bind _cls (Variables|Default|GetbP_AbilityBase))
+  (bind _cls2 (Variables|Default|GetBP_AbilityBase))
+  (Development|PrintString "test"))

@@ -1,0 +1,24 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "Enemy Creation Wizard Editor",
+  "Description": "Runtime Blueprint bridge and editor backend for EUW_EnemyCreationWizard.",
+  "Category": "Editor",
+  "CreatedBy": "TA_Test",
+  "EnabledByDefault": true,
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "Modules": [
+    {
+      "Name": "EnemyCreationWizardRuntime",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "EnemyCreationWizardEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    }
+  ]
+}
