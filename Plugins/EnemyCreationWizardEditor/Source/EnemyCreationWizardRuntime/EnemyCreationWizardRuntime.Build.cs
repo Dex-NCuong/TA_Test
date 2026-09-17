@@ -11,7 +11,8 @@ public class EnemyCreationWizardRuntime : ModuleRules
             "Core",
             "CoreUObject",
             "Engine",
-            "UMG"
+            "UMG",
+            "AIModule"
         });
 
         if (Target.bBuildEditor)

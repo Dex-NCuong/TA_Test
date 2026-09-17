@@ -3,12 +3,14 @@
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/Composites/BTComposite_Sequence.h"
+#include "BTTask_ChasePlayer.h"
 #include "BlueprintEditorLibrary.h"
 #include "Containers/Ticker.h"
 #include "Editor.h"
 #include "EditorUtilitySubsystem.h"
 #include "EditorUtilityWidgetBlueprint.h"
 #include "EnemyCreationWizardRuntimeLibrary.h"
+#include "EnemyChaseAIController.h"
 #include "EnemyCreationWizardRuntimeBridge.h"
 #include "EnemyCreationWizardWidget.h"
 #include "Engine/Blueprint.h"
@@ -31,6 +33,7 @@ namespace
     const TCHAR* WizardAssetObjectPath = TEXT("/Game/GeneratedEnemiesDemo/Editor/Widgets/EUW_EnemyCreationWizard.EUW_EnemyCreationWizard");
     const TCHAR* DemoBehaviorTreePackagePath = TEXT("/Game/Blueprints/Enemies/BT_TestEnemy");
     const TCHAR* DemoBehaviorTreeObjectPath = TEXT("/Game/Blueprints/Enemies/BT_TestEnemy.BT_TestEnemy");
+
 }
 
 class FEnemyCreationWizardEditorModule;
@@ -217,6 +220,10 @@ private:
             {
                 UE_LOG(LogTemp, Error, TEXT("Enemy Creation Wizard: %s exists but is not a Behavior Tree; it was left unchanged."), DemoBehaviorTreeObjectPath);
             }
+            else
+            {
+                EnsureChaseTask(CastChecked<UBehaviorTree>(ExistingObject));
+            }
             return;
         }
         if (FPackageName::DoesPackageExist(DemoBehaviorTreePackagePath))
@@ -246,6 +253,7 @@ private:
             BehaviorTree,
             TEXT("RootSequence"),
             RF_Transactional);
+        EnsureChaseTask(BehaviorTree);
         FAssetRegistryModule::AssetCreated(BehaviorTree);
         BehaviorTree->MarkPackageDirty();
 
@@ -256,6 +264,40 @@ private:
             return;
         }
         UE_LOG(LogTemp, Display, TEXT("Enemy Creation Wizard: created demo Behavior Tree %s with a Sequence root."), DemoBehaviorTreeObjectPath);
+    }
+
+    void EnsureChaseTask(UBehaviorTree* BehaviorTree) const
+    {
+        if (!BehaviorTree)
+        {
+            return;
+        }
+
+        UBTComposite_Sequence* Root = Cast<UBTComposite_Sequence>(BehaviorTree->RootNode);
+        if (!Root)
+        {
+            BehaviorTree->Modify();
+            Root = NewObject<UBTComposite_Sequence>(BehaviorTree, TEXT("RootSequence"), RF_Transactional);
+            BehaviorTree->RootNode = Root;
+        }
+
+        for (const FBTCompositeChild& Child : Root->Children)
+        {
+            if (Child.ChildTask && Child.ChildTask->IsA<UBTTask_ChasePlayer>())
+            {
+                return;
+            }
+        }
+
+        Root->Modify();
+        FBTCompositeChild& Child = Root->Children.AddDefaulted_GetRef();
+        Child.ChildTask = NewObject<UBTTask_ChasePlayer>(Root, TEXT("ChasePlayer"), RF_Transactional);
+        BehaviorTree->MarkPackageDirty();
+
+        if (UEditorAssetSubsystem* AssetSubsystem = GEditor->GetEditorSubsystem<UEditorAssetSubsystem>())
+        {
+            AssetSubsystem->SaveLoadedAsset(BehaviorTree, false);
+        }
     }
 
     void RegisterMenus()

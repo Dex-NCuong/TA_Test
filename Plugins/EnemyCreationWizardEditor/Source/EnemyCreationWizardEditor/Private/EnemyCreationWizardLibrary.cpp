@@ -3,6 +3,7 @@
 #include "EnemyCreationWizardHelpers.h"
 #include "EnemyCreationWizardWidget.h"
 #include "EnemyCreationWizardOpponentComponent.h"
+#include "EnemyChaseAIController.h"
 
 #include "AIController.h"
 #include "Animation/AnimInstance.h"
@@ -730,7 +731,7 @@ bool UEnemyCreationWizardLibrary::CreateEnemyFromWizard(UEditorUtilityWidget* Wi
     {
         Report(Wizard, 0.75f, TEXT("Creating optional AI Controller..."));
         ProgressTask.EnterProgressFrame(15.0f);
-        AIControllerBlueprint = CreateBlueprintAsset(AIPackageName, AIAssetName, AAIController::StaticClass());
+        AIControllerBlueprint = CreateBlueprintAsset(AIPackageName, AIAssetName, AEnemyChaseAIController::StaticClass());
         if (!AIControllerBlueprint || !AIControllerBlueprint->GeneratedClass)
         {
             DiscardUnsavedBlueprint(AIControllerBlueprint);
